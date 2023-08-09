@@ -241,23 +241,23 @@ let ids = () => {
                 today.setMonth(today.getMonth() - 1);
 
                 const dateString = today.toISOString(); // This gives you the formatted date string
-                console.log(dateString)
+                // console.log(dateString)
 
                 // "2023-07-01T11:18:56Z"
                 for (var i = 0; i < data.items.length; i++) {
                     if (data.items[i].snippet.publishedAt > dateString /*"2023-07-08T00:00:00Z"/*today.getFullYear() + "-" + 0 + today.getMonth() + "-" + today.getDay()*/) {
                         arr.push(data.items[i].snippet.resourceId.videoId);
-                        console.log(data.items[i].snippet.title + data.items[i].snippet.resourceId.videoId)
+                        // console.log(data.items[i].snippet.title + data.items[i].snippet.resourceId.videoId)
 
                     }
                 }
 
-                console.log(arr);
+                // console.log(arr);
                 return arr; // Return the array of video IDs to continue the promise chain.
             })
             .then(videoIds => {
                 // Now we can call the video function to filter video IDs based on duration.
-                console.log(videoIds)
+                // console.log(videoIds)
                 return video(videoIds);
             })
         )
@@ -342,7 +342,7 @@ avg.addEventListener("click", () => {
             };
 
             calculateAverageViews(filteredVideoIds);
-            console.log(filteredVideoIds)
+            // console.log(filteredVideoIds)
             // The filteredVideoIds will contain the result from the video function.
             // You can now use the filteredVideoIds array here or perform further actions.
         })
